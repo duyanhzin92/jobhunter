@@ -32,12 +32,14 @@ public class FormatRestResponse implements ResponseBodyAdvice<Object> {
 
         RestResponse<Object> res = new RestResponse<Object>();
         res.setStatusCode(status);
+
         if (status >= 400) {
             return body;
         } else {
             res.setData(body);
-            res.setMessage("success");
+            res.setMessage("CALL API SUCCESS");
         }
+
         return res;
     }
 
